@@ -74,7 +74,12 @@ try {
   res.status(500).json({
     error: 'Something went wrong while generating an answer.',
   });
-}});
+}
+} catch (outerError) {
+  console.error('Outer error:', outerError);
+  res.status(500).json({ error: 'Server error' });
+}
+});
 
 app.get('/', (req, res) => {
   res.send('PsyCanvas backend is running.');
