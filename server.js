@@ -74,7 +74,7 @@ try {
   res.status(500).json({
     error: 'Something went wrong while generating an answer.',
   });
-}
+});
 
 app.get('/', (req, res) => {
   res.send('PsyCanvas backend is running.');
